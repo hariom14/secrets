@@ -1,0 +1,11 @@
+ level 1 security:- in this first we rendered home ,login and register page with get http verb request and then wee rendered
+secrets page in login and register with post http verb request. and for that we will create a new user inside register and for
+login we will check their password by using findOne method for finding that user with condition email:username(req.body.username)
+ and then we will compare foundUser.password with req.body.password and if result becomes true then that person can excess the
+secrets page .
+
+level 2 security(encryption):- In this we will install mongoose-encryption in our package and then we will encrypt our fields
+like password etc. and it will encrypt our code at save() and decrypt that field at find(). so now it will convert our encrypted
+fields in binary text which is hard to crack the password ,now our password is no more visible in plain text. But also if someone
+got access to our DB and our app.js file then with decrypt plugin he/she can decrypt our encrypted fields . so to prevent from this
+we will use environment variables.
